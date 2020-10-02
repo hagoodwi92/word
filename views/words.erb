@@ -1,7 +1,8 @@
-<h1>All Sales Vinyl</h1>
-
-<h3>Available Records</h3>
-
+<div class = "jumbotron">
+  <h1>Make Your Own Dictionary</h1>
+</div>
+<body>
+<h3>Word/s Created:</h3>
 <% if @words.any? %>
   <ul>
   <% @words.each do |word| %>
@@ -9,8 +10,11 @@
   <% end %>
   </ul>
 <% else %>
-  <p>There are currently no records to display.</p>
+  <p>There are currently no words to display.</p>
 <% end %>
-
+<p>Click on the desired word above to see its definition/s. Start below by adding a new word, real or make-believe!</p>
+<div id = 'link'>
 <a href="/words/new">Add a new word</a>
-
+<br><br><br>
+</div>
+</body>
