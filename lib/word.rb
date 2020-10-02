@@ -1,12 +1,13 @@
 class Word
-  attr_reader :id, :word
-  attr_accessor :word
+  attr_reader :id, :word, :picture
+  attr_accessor :word, :picture
   @@words = {}
   @@total_rows = 0
 
-  def initialize(word, id)
+  def initialize(word, id, picture)
     @word = word
     @id = id || @@total_rows += 1
+    @picture = picture
   end
 
   def self.all
@@ -14,7 +15,7 @@ class Word
   end
 
   def save
-    @@words[self.id] = Word.new(self.word, self.id)
+    @@words[self.id] = Word.new(self.word, self.id, self.picture)
   end
 
   def ==(word_to_compare)
@@ -32,7 +33,7 @@ class Word
 
   def update(word)
     self.word = word
-    @@words[self.id] = Word.new(self.word, self.id)
+    @@words[self.id] = Word.new(self.word, self.id, self.picture)
   end
 
   def delete()
