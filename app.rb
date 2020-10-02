@@ -17,8 +17,7 @@ end
 
 post('/words') do
   name = params[:word_name]
-  @photo = params[:photo_link]
-  word = Word.new(name, nil, nil)
+  word = Word.new(name, nil)
   word.save()
   @words = Word.all() # Adding this line will fix the error.
   erb(:words)
@@ -27,7 +26,6 @@ end
 get('/words/new') do
   erb(:new_word)
 end
-
 
 get('/words/:id') do
   @word = Word.find(params[:id].to_i())
@@ -53,7 +51,7 @@ delete('/words/:id') do
   erb(:words)
 end
 
-# Get the detail for a specific definition
+# Get the detail for a specific definition such as lyrics and definitionwriters.
 get('/words/:id/definitions/:definition_id') do
   @definition = Definition.find(params[:definition_id].to_i())
   erb(:definition)
@@ -82,3 +80,7 @@ delete('/words/:id/definitions/:definition_id') do
   @word = Word.find(params[:id].to_i())
   erb(:word)
 end
+
+
+
+
