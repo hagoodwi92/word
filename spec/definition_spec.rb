@@ -80,7 +80,7 @@ describe '#Definition' do
   end
   describe('.find_by_word') do
     it("finds definitions for an word") do
-      word2 = Word.new("Blue", nil, nil)
+      word2 = Word.new("Blue", nil)
       word2.save
       definition = Definition.new("Naima", @word.id, nil)
       definition.save()

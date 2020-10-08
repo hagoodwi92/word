@@ -15,7 +15,7 @@ end
 
 describe('create a definition path', {:type => :feature}) do
   it('creates an word and then goes to the word page') do
-    word = Word.new("Word", nil, nil)
+    word = Word.new("Word", nil)
     word.save
     visit("/words/#{word.id}")
     fill_in('definition_name', :with => 'Definition')
