@@ -8,7 +8,7 @@ describe '#Definition' do
   before(:each) do
     Word.clear()
     Definition.clear()
-    @word = Word.new("Giant Steps", nil, nil)
+    @word = Word.new("Giant Steps", nil)
     @word.save()
   end
 
